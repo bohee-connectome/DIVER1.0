@@ -12,9 +12,22 @@ ADFTD (ds004504, CN/FTD/AD 3-class, subject-exclusive split) linear-probe 벤치
 | EEGPT | 0.490 ± 0.024 | 0.197 ± 0.039 | 0.417 ± 0.033 | — | — |
 | DIVER | 0.402 ± 0.010 | 0.125 ± 0.014 | 0.422 ± 0.012 | 0.443 ± 0.005 | 0.581 ± 0.010 |
 
-- EEGPT는 eval(pyhealth `multiclass_metrics_fn`)이 acc/balanced_acc/kappa/f1만 출력 → auc_pr/AUROC 없음. 필요 시 `utils_eval.py`에 PR-AUC 추가 후 재평가.
+- EEGPT eval(pyhealth `multiclass_metrics_fn`)은 multiclass에서 acc/balanced_acc/kappa/f1만 출력, auc_pr/AUROC 없음(`get_metrics` else 브랜치 metrics 리스트에 AUC 미포함). → 재학습 없이 복구 가능(CAUEEG 섹션 참고).
 - DIVER LP가 CBraMod와 비슷·낮은 편은 iEEG→scalp 도메인갭 때문(LP < fullFT, OHBM에서 확인). EEGPT가 ADFTD에서 최고.
 - 모든 모델 FTD(중간 클래스) 약함 = AD-vs-FTD 난이도(DIVER조차 chance).
+
+## CAUEEG 결과 (3-class, 5 seeds, 2026-07-05 완료)
+
+| Model | ACC | auc_pr | AUROC | kappa | F1(macro) |
+|-------|-----|--------|-------|-------|-----------|
+| CBraMod | 0.441 ± 0.017 | 0.531 ± 0.007 | 0.669 ± 0.006 | (기존완료) | |
+| DIVER | 0.547 ± 0.009 | 0.565 ± 0.006 | 0.727 ± 0.005 | | |
+| EEGPT | 0.522 ± 0.006 | 0.543 ± 0.011 | 0.712 ± 0.007 | 0.272 ± 0.012 | 0.521 ± 0.007 |
+
+- 세 metric 모두 **DIVER > EEGPT > CBraMod** (DIVER가 CAUEEG SOTA).
+- EEGPT job 55473101 (2026-07-04 COMPLETED, 5h40m). 원본 pyhealth eval은 ACC/kappa/F1만 냄.
+- **auc_pr/AUROC는 재학습 없이 사후복구**: best 체크포인트로 `--eval_only`(test만) 재실행 + 확률 npz 덤프 → 오프라인 sklearn macro-OvR. ACC .5222 비트단위 재현으로 검증. 스크립트 `recover_multiclass_auc.py` (eval_only 패치는 헤더 docstring).
+- **시트 metric 컨벤션(태양쌤)**: binary→auc_pr/AUROC, multi→kappa/F1 (기존 EEG FM 논문 관행). ⚠️ CAUEEG(3)가 시트엔 auc_pr/AUROC라 규칙과 불일치 → 태양쌤 재확인 대기. EEGPT 양쪽 값 다 확보.
 
 ## 공통 데이터 (ADFTD 소스)
 
