@@ -348,7 +348,8 @@ Journal of Neural Engineering (예정)
 - **PhysioNet**: (예정)
 
 ### 관련 프로젝트
-- **LEAD Project**: https://lead-project.org
+- **LEAD Paper**: https://arxiv.org/abs/2502.01678v4
+- **LEAD Code**: https://github.com/DL4mHealth/LEAD
 
 ---
 
