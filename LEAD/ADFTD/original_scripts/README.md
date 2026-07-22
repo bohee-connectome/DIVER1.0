@@ -80,7 +80,7 @@ This folder contains the **original preprocessing scripts** from the LEAD paper 
 ## Reference
 
 **LEAD Paper**:
-Zhang, X., et al. (2024). LEAD: Self-Supervised Learning for EEG Analysis with Diffusion models.
+Wang, Y., Huang, N., Mammone, N., Cecchi, M., & Zhang, X. (2025). LEAD: An EEG Foundation Model for Alzheimer's Disease Detection. arXiv:2502.01678.
 
 **ADFTD Dataset** (OpenNeuro ds004504):
 https://openneuro.org/datasets/ds004504/versions/1.0.8

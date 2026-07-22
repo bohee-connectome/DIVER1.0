@@ -251,11 +251,23 @@ threshold_std = 5 μV
 ## 📖 Citation
 
 ```bibtex
-@article{lead2024,
-  title={LEAD: Learning EEG Analysis for neurodegenerative Diseases},
-  author={Park, J. E. and Lee, B. and others},
-  journal={Journal of Neural Engineering},
-  year={2024}
+@article{wang2025lead,
+  title={LEAD: An EEG Foundation Model for Alzheimer's Disease Detection},
+  author={Wang, Yihe and Huang, Nan and Mammone, Nadia and Cecchi, Marco and Zhang, Xiang},
+  journal={arXiv preprint arXiv:2502.01678},
+  year={2025}
+}
+
+@article{miltiadous2023adftd,
+  title={A Dataset of Scalp EEG Recordings of Alzheimer's Disease, Frontotemporal Dementia and Healthy Subjects from Routine EEG},
+  author={Miltiadous, Andreas and Tzimourta, Katerina D. and Afrantou, Theodora and Ioannidis, Panagiotis and Grigoriadis, Nikolaos and Tsalikakis, Dimitrios G. and Angelidis, Pantelis and Tsipouras, Markos G. and Glavas, Euripidis and Giannakeas, Nikolaos and Tzallas, Alexandros T.},
+  journal={Data},
+  volume={8},
+  number={6},
+  pages={95},
+  year={2023},
+  publisher={MDPI},
+  doi={10.3390/data8060095}
 }
 ```
 

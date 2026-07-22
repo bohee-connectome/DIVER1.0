@@ -338,14 +338,20 @@ value = {
 
 ### 논문
 ```
-Park, J. E., et al. (2024).
-LEAD: Learning EEG Analysis for neurodegenerative Diseases
-Journal of Neural Engineering (예정)
+# LEAD (모델/프레임워크 논문)
+Wang, Y., Huang, N., Mammone, N., Cecchi, M., & Zhang, X. (2025).
+LEAD: An EEG Foundation Model for Alzheimer's Disease Detection.
+arXiv:2502.01678
+
+# ADFTD (ds004504) 데이터셋 원 출처
+Miltiadous, A., et al. (2023).
+A Dataset of Scalp EEG Recordings of Alzheimer's Disease, Frontotemporal
+Dementia and Healthy Subjects from Routine EEG.
+Data, 8(6):95. doi:10.3390/data8060095
 ```
 
 ### 데이터셋
-- **GitHub**: https://github.com/your-org/ADFTD-dataset (비공개)
-- **PhysioNet**: (예정)
+- **OpenNeuro**: https://openneuro.org/datasets/ds004504/versions/1.0.8 (ds004504, 공개)
 
 ### 관련 프로젝트
 - **LEAD Paper**: https://arxiv.org/abs/2502.01678v4
